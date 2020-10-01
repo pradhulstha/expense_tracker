@@ -12,7 +12,7 @@ It follows a very basic architecture patterns, please read on to find out more a
  
 ## Architecture Design
 
-![alt text](https://github.com/pradhulstha/images/design.jpeg "Design Pattern")
+![DesignPattern]("images/design.jpeg")
 
 # Run & Compile
 We will be using Docker to build and run the project. Please follow the steps listed below:
