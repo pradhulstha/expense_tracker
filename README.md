@@ -14,6 +14,9 @@ It follows a very basic architecture patterns, please read on to find out more a
 
 ![alt text](https://github.com/pradhulstha/images/design.jpeg "Design Pattern")
 
+# Run & Compile
+We will be using Docker to build and run the project. Please follow the steps listed below:
+
 # Build
 - Install NPM & Angular (Setup)[https://angular.io/guide/setup-local]
 - Clone the project
