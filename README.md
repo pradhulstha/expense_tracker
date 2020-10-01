@@ -12,5 +12,12 @@ It follows a very basic architecture patterns, please read on to find out more a
  
 ## Architecture Design
 
-![alt text](https://github.com/pradhulstha/images/designpattern.jpg "Design Pattern")
+![alt text](https://github.com/pradhulstha/images/design.jpeg "Design Pattern")
 
+# Build
+- Install NPM & Angular (Setup)[https://angular.io/guide/setup-local]
+- Clone the project
+- Run `npm install`
+- Enter `ng serve`
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/ directory`. Use the `--prod` flag for a production build.
