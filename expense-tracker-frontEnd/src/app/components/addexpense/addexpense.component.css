@@ -1,0 +1,35 @@
+form {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+}
+
+form label {
+  padding: 10px;
+}
+
+form button {
+  width: 20%;
+  padding: 10px;
+  margin: 10px;
+  background-color: #5f9ea0;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px grey;
+  transition: background-color 0.3s ease-in;
+  color: whitesmoke;
+}
+
+form button:hover {
+  background-color: rgba(95, 158, 160, 0.4);
+}
+
+
+
+form button:active {
+  transform: translateX(-2px) translateY(-6px);
+
+}

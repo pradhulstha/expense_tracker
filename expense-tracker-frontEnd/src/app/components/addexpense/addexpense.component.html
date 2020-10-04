@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Add/edit Expense</h1>
+
+
+<div mat-dialog-content>
+<form (ngSubmit)="saveExpense()">
+
+  <label>
+    <input name="expense" type="text" label="expense" [(ngModel)]="expense.expenses" placeholder="Enter Expense Name">
+  </label>
+  <label>
+    <input name="amount" type="number" label="amount" [(ngModel)]="expense.amount" placeholder="Enter Amount" pattern="[0-9]">
+  </label>
+
+  <label>
+    <textarea name="description" type="text" label="description" [(ngModel)]="expense.description" placeholder="Enter Description"></textarea>
+  </label>
+
+  <button *ngIf="expense.id" name="submit" type="submit">Update Expense</button>
+
+  <button *ngIf="!expense.id" name="submit" type="submit">Add Expense</button>
+
+  <button class="deleteBtn" *ngIf="expense.id" (click)="deleteExpense(expense.id)">Delete Expense</button>
+
+</form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
+

@@ -1,0 +1,83 @@
+<button mat-raised-button color="accent" routerLink="/addExpense" type="button" routerLinkActive="true">Add
+  Expense</button>
+
+
+<!--
+<div class="expenseTableContainer" *ngIf="expenses.length else elseBlock">
+  <table id="expenseTable">
+    <thead>
+      <tr>
+        <td>Expense</td>
+        <td>Description</td>
+        <td>Price</td>
+        <td>&nbsp;</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let expense of expenses">
+      <tr>
+        <td>{{expense.expenses}}</td>
+        <td>{{expense.description}}</td>
+        <td>{{expense.amount | currency:'USD'}}</td>
+        <td><a routerLink="/editExpense/{{expense.id}}" routerLinkActive="true">Edit</a>
+          <button type="button" (click)="deleteExpense(expense.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+-->
+<div *ngIf='dataSource else elseBlock'>
+
+<mat-form-field class='form'>
+  <mat-label>Search</mat-label>
+  <input matInput type="text" id="search-box" placeholder="Ex. Apple" (input)="applyFilter()"
+    [(ngModel)]="filters.keyword" #input />
+
+</mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Expenses">
+      <th mat-header-cell *matHeaderCellDef> Expenses </th>
+      <td mat-cell *matCellDef="let element"> {{element.expenses}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Amount">
+      <th mat-header-cell *matHeaderCellDef> Amount </th>
+      <td mat-cell *matCellDef="let element"> {{element.amount | currency: USD}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+     <ng-container matColumnDef="Actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <a mat-link (click)="openDialog(element.id)">Edit</a>
+        <!-- <a routerLink="/editExpense/{{element.id}}" routerLinkActive="true">Edit</a> -->
+        <a id="delete" (click)="deleteExpense(element.id)">Delete</a> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> U+0020
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+
+</div>
+<ng-template #elseBlock>
+  <div>
+    <h1> No Expense Found.</h1>
+  </div>
+</ng-template>
